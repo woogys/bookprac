@@ -1,6 +1,5 @@
 package com.woogy.bookprac.web;
 
-import com.woogy.bookprac.web.HelloController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
