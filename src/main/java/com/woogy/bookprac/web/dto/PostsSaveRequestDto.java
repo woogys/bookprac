@@ -1,7 +1,6 @@
 package com.woogy.bookprac.web.dto;
 
 import com.woogy.bookprac.domain.posts.Posts;
-import com.woogy.bookprac.service.PostsService;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
