@@ -2,13 +2,14 @@ package com.woogy.bookprac.service;
 
 import com.woogy.bookprac.domain.posts.Posts;
 import com.woogy.bookprac.domain.posts.PostsRepository;
+import com.woogy.bookprac.web.dto.PostsListResponseDto;
 import com.woogy.bookprac.web.dto.PostsResponseDto;
 import com.woogy.bookprac.web.dto.PostsSaveRequestDto;
 import com.woogy.bookprac.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -40,7 +41,7 @@ public class PostsService {
     }
 
     @Transactional(readOnly = true)
-    public List<PostsListResponseDto> findAllDesc(){
+    public List<PostsListResponseDto> findAllDesc() {
         return postsRepository.findAllDesc().stream()
                 .map(PostsListResponseDto::new)
                 .collect(Collectors.toList());
