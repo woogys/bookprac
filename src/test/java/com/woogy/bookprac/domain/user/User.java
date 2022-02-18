@@ -1,6 +1,6 @@
-package com.woogy.bookprac.domain.posts.user;
+package com.woogy.bookprac.domain.user;
 
-import com.woogy.bookprac.domain.posts.BaseTimeEntity;
+import com.woogy.bookprac.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package com.woogy.bookprac.domain.posts.user;
+package com.woogy.bookprac.domain.user;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

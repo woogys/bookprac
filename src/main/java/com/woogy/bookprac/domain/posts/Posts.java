@@ -1,5 +1,6 @@
 package com.woogy.bookprac.domain.posts;
 
+import com.woogy.bookprac.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
