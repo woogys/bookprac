@@ -1,4 +1,4 @@
-package com.woogy.bookprac.domain.posts;
+package com.woogy.bookprac.domain;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
