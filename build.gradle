@@ -41,6 +41,6 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
 
     //db 의존성
-    implementation('org.springframwork.session:spring-session-jdbc')
+    implementation('org.springframework.session:spring-session-jdbc')
 }
 
