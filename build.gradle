@@ -46,3 +46,30 @@ dependencies {
     testImplementation("org.springframework.security:spring-security-test")
 }
 
+plugins {
+    id "org.asciidoctor.jvm.convert" version "3.3.2" // 그레이들 버전 7 이상인 경우 적용
+}
+//테스트코드에서 사용할 MockMVC 의존성 추가
+dependencies {
+    testImplementation "org.springframework.restdocs:spring-restdocs-mockmvc:2.0.5.RELEASE"
+}
+//generated snippets 결과가 나오는 장소 지정
+ext {
+    snippetsDir = file('build/generated-snippets')
+}
+
+test { // test작업에 snippets directory 출력으로 추가
+    outputs.dir snippetsDir
+}
+
+asciidoctor { // asciidoctor 작업 설정
+    dependsOn test // snippets directory 입력으로 지정
+    inputs.dir snippetsDir // 문서 생성 이전에 테스트가 실행되도록 asciidoctor 작업이 test 작업에 의존하도록 지정
+}
+
+bootJar { // 프로젝트 jar파일 안에 자동으로 생성된 문서를 포함하고 싶을 때 사용
+    dependsOn asciidoctor // jar build 전 문서 생성되도록 설정
+    from ("${asciidoctor.outputDir}/html5") { // 생성된 문서가 static/docs directory로 복사되도록 설정
+        into 'static/docs'
+    }
+}
